@@ -1,7 +1,9 @@
 name: bip_topl
-description: A starting point for Dart libraries or applications.
-version: 1.0.0
-# homepage: https://www.example.com
+description: SDK for the cryptography components for building Topl blockchain mobile apps using Flutter
+version: 0.0.1
+homepage: https://github.com/Topl/bip-topl
+repository: https://github.com/Topl/bip-topl
+issue_tracker: https://github.com/Topl/bip-topl/issues
 
 environment:
   sdk: '>=2.12.0 <3.0.0'
