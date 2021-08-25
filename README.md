@@ -3,7 +3,8 @@
 [![codecov](https://codecov.io/gh/Topl/bip-topl/branch/main/graph/badge.svg)](https://codecov.io/gh/Topl/bip-topl)
 ![gh-pages docs](https://topl.github.io/bip-topl/)
 [![Code of Conduct](https://img.shields.io/badge/code-of%20conduct-green.svg)](https://github.com/Topl/bip-topl/blob/main/.github/CODE_OF_CONDUCT.md)
-[![Discord](https://img.shields.io/discord/591914197219016707.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/CHaG8utU)
+[![Discord](https://img.shields.io/discord/591914197219016707.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)][discord-url]
+[![StackExchange][stackexchange-image]][stackexchange-url]
 
 
 
@@ -34,3 +35,19 @@ It will power the live Ribn wallet currently in active development.
 * utilities for staking accounts
 * custom asset transactions
 * smart contracts
+
+### Contributing 
+Please follow the [Contribution Guidelines](./github/CONTRIBUTING.md)
+
+### Community
+- [Discord][discord-url]
+- [StackExchange][stackexchange-url]
+
+### Similar libraries in other languages
+- Javascript: [BramblJS](https://github.com/Topl/BramblJS)
+- Python: [BramblPy](https://github.com/Topl/BramblPy)
+- Scala: [BramblSc](https://github.com/Topl/Bifrost/tree/main/brambl/src)
+
+[discord-url]: https://discord.gg/CHaG8utU
+[stackexchange-image]: https://img.shields.io/badge/bip--topl-stackexchange-brightgreen
+[stackexchange-url]: https://bitcoin.stackexchange.com/questions/tagged/bip-topl
