@@ -1,3 +1,4 @@
+[dart-test](https://github.com/Topl/bip-topl/actions/workflows/dart-test.yml/badge.svg)
 A library for Dart developers.
 
 ## Usage
