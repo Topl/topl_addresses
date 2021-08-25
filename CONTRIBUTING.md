@@ -9,8 +9,6 @@ Before you begin however, please be sure to read our [Contributor Code of Conduc
 
 Getting Started
 ---------------
-If you just want to talk to us or share thoughts you have regarding the project
-* [Join our Slack](https://slackin-inviter.herokuapp.com/)
 
 If you have played around with the library and found some issues with the library, be sure to submit an [Issue](https://github.com/Topl/bip-topl/issues)
 * Make sure you have a GitHub account
