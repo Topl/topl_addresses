@@ -25,14 +25,14 @@ class InvalidBip32Ed25519MasterSecretException implements Exception {}
 ///
 class Bip32Ed25519 extends Bip32Ed25519KeyDerivation with Bip32KeyTree {
   Bip32Ed25519(Uint8List masterSeed) {
-    this.root = master(masterSeed);
+    root = master(masterSeed);
   }
   Bip32Ed25519.seed(String seed) {
-    this.root = master(str2ByteArray(seed));
+    root = master(str2ByteArray(seed));
   }
 
   Bip32Ed25519.import(String key) {
-    this.root = doImport(key);
+    root = doImport(key);
   }
 
   /// BIP32-ED25519 dependent tree depth.
@@ -43,6 +43,7 @@ class Bip32Ed25519 extends Bip32Ed25519KeyDerivation with Bip32KeyTree {
 
   /// The default implementation of the original BIP32-ED25519's master key
   /// generation.
+  @override
   Bip32Key master(Uint8List masterSecret) {
     final secretBytes = Hash.sha512(masterSecret);
 
@@ -61,7 +62,6 @@ class Bip32Ed25519 extends Bip32Ed25519KeyDerivation with Bip32KeyTree {
     return rootKey;
   }
 
-  @override
   static Bip32Key doImport(String key) {
     try {
       return Bip32VerifyKey(str2ByteArray(key));
@@ -161,6 +161,7 @@ class Bip32Ed25519KeyDerivation implements Bip32ChildKeyDerivaton {
   /// Public parent key to public child key
   ///
   /// I computes a child extended private key from the parent extended private key.
+  @override
   Bip32PrivateKey ckdPriv(Bip32PrivateKey parentKey, int index) =>
       _ckd(parentKey, index) as Bip32PrivateKey;
 
@@ -168,6 +169,7 @@ class Bip32Ed25519KeyDerivation implements Bip32ChildKeyDerivaton {
   ///
   /// It computes a child extended public key from the parent extended public key.
   /// It is only defined for non-hardened child keys.
+  @override
   Bip32PublicKey ckdPub(Bip32PublicKey parentKey, int index) =>
       _ckd(parentKey, index) as Bip32PublicKey;
 
@@ -176,6 +178,7 @@ class Bip32Ed25519KeyDerivation implements Bip32ChildKeyDerivaton {
   /// It computes the extended public key corresponding to an extended private
   /// key a.k.a the `neutered` version, as it removes the ability to sign transactions.
   ///
+  @override
   Bip32PublicKey neuterPriv(Bip32PrivateKey k) =>
       Bip32VerifyKey(k.publicKey.asTypedList);
 

@@ -197,7 +197,7 @@ class MnemonicIndex {
   }
 }
 
-typedef int G();
+typedef G = int Function();
 
 class Entropy {
   final Uint8List bytes;

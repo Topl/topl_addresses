@@ -46,9 +46,6 @@ class Cip1852KeyTree extends Bip32KeyTree {
 
   static const int maxIndex = 0xFFFFFFFF;
   static const int hardenedIndex = 0x80000000;
-  static const String _hardenedSuffix = "'";
-  static const String _privateKeyPrefix = 'm';
-  static const String _publicKeyPrefix = 'M';
 
   // Change is renamed to role.
   int get role => change;
