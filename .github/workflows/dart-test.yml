@@ -11,7 +11,7 @@ on:
 # define what happens when conditions are met
 jobs:
   # Check code formatting and static analysis on three OS (linux, macOS, and windows)
-  # against dev, beta, stable, and 2.12
+  # against dev, beta, stable, and 2.13.0 (The package's lower bound)
   analyze:
     runs-on: ${{ matrix.os }}
     strategy:
@@ -34,33 +34,9 @@ jobs:
       - name: Analyze project source
         run: dart analyze --fatal-infos
         if: always() && steps.install.outcome == 'success'
-  # Check code formatting and static analysis on three OS (linux, macOS, and windows)
-  # The Dart 2.10 SDK introduced a new unified dart developer tool, which is what we use in the usage examples above for installing dependencies, verifying formatting, analyzing, etc.
-  # Testing against 2.9.0 and 2.8.1 should give us enough coverage to ensure compatibility with older versions of the Dart SDK
-  analyze_old_sdks:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
-        sdk: [2.9.0, 2.8.1]
-    steps:
-      - uses: actions/checkout@v2
-      - uses: dart-lang/setup-dart@v1.0
-        with:
-          sdk: ${{ matrix.sdk }}
-      - id: install
-        name: Install dependencies
-        run: pub get
-      - name: Check formatting
-        run: dartfmt --dry-run --set-exit-if-changed .
-        if: always() && steps.install.outcome == 'succcess'
-      - name: Analyze project source
-        run: dartanalyzer --fatal-warnings .
-        if: always() && steps.install.outcome == 'success'
   # Run tests on a matrix consisting of two dimensions:
   # 1. OS: ubuntu-latest, macos-latest, windows-latest
-  # 2. Release channel: dev, stable, and 2.12.0
+  # 2. Release channel: dev, stable, and 2.13.0 (the package's lower bound)
   test:
     needs: analyze
     runs-on: ${{ matrix.os }}
@@ -83,28 +59,4 @@ jobs:
       - name: Run Chrome tests
         run: dart test --platform chrome
         if: always() && steps.install.outcome == 'success'
-  # Run tests on a matrix consisting of two dimensions:
-  # 1. OS: ubuntu-latest, macos-latest, windows-latest
-  # 2. Release channel: 2.9.0, 2.8.1
-  test_old_sdks:
-    needs: analyze
-    runs-on: ${{ matrix.os }}
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
-        sdk: [2.9.0, 2.8.1]
-    steps:
-      - uses: actions/checkout@v2
-      - uses: dart-lang/setup-dart@v1.0
-        with:
-          sdk: ${{ matrix.sdk }}
-      - id: install
-        name: Install dependencies
-        run: pub get
-      - name: Run VM tests
-        run: pub run test --platform vm
-        if: always() && steps.install.outcome == 'success'
-      - name: Run Chrome tests
-        run: pub run test --platform chrome
-        if: always() && steps.install.outcome == 'success'
+
