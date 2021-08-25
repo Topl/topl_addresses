@@ -2,6 +2,8 @@
 [![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
 [![codecov](https://codecov.io/gh/Topl/bip-topl/branch/main/graph/badge.svg)](https://codecov.io/gh/Topl/bip-topl)
 ![gh-pages docs](https://topl.github.io/bip-topl/)
+[![Code of Conduct](https://img.shields.io/badge/code-of%20conduct-green.svg)](https://github.com/Topl/bip-topl/blob/main/.github/CODE_OF_CONDUCT.md)
+
 
 # Topl Bip Library
 
