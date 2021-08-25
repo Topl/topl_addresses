@@ -5,6 +5,10 @@
 # Conventional directory for build outputs.
 build/
 
+# Files and directories created by VS Code
+.history/
+.vscode/
+
 # Omit committing pubspec.lock for library packages; see
 # https://dart.dev/guides/libraries/private-files#pubspeclock.
 pubspec.lock
