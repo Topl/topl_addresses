@@ -3,6 +3,8 @@
 [![codecov](https://codecov.io/gh/Topl/bip-topl/branch/main/graph/badge.svg)](https://codecov.io/gh/Topl/bip-topl)
 ![gh-pages docs](https://topl.github.io/bip-topl/)
 [![Code of Conduct](https://img.shields.io/badge/code-of%20conduct-green.svg)](https://github.com/Topl/bip-topl/blob/main/.github/CODE_OF_CONDUCT.md)
+[![Discord](https://img.shields.io/discord/591914197219016707.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2)](https://discord.gg/CHaG8utU)
+
 
 
 # Topl Bip Library
