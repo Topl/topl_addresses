@@ -54,6 +54,7 @@ class ExtendedSigningKey extends SigningKey {
   @override
   VerifyKey get publicKey => verifyKey;
 
+  @override
   ByteList get keyBytes => prefix;
 
   /// Throws an error on invalid bytes and return the bytes itself anyway

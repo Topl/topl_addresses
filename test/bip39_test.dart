@@ -91,7 +91,6 @@ void testVector(Map<String, String> v, int i, String language) {
   group('for $language($i), ${v['entropy']}', () {
     final mnemonics = nfkd(v['mnemonics']!);
     final passphrase = nfkd(v['passphrase']!);
-    final type = from_word_count(mnemonics.split(' ').length);
     setUp(() {});
     test('mnemonic to entropy', () {
       final entropy = mnemonicToEntropy(mnemonics, language);
