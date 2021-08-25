@@ -8,31 +8,42 @@ on:
     branches: [main, dev]
 # define what happens when conditions are met
 jobs:
-  build_dart2:
-    # use ubuntu's latest OS
-    runs-on: ubuntu-latest
-    # use the google/dart container (this makes `dart` available to use)
-    # test against multiple versions of dart
-    container:
-      image: google/dart:2
-    # checkout the code, run pub get and finally run tests
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        sdk: [stable, beta, dev]
     steps:
       - uses: actions/checkout@v2
+      - uses: dart-lang/setup-dart@v1
+        with:
+          sdk: ${{ matrix.sdk }}
       - name: Install dependencies
         run: pub get
+      - name: Verify formatting
+        run: dart format --output=none --set-exit-if-changed .
+
+      - name: Analyze project source
+        run: dart analyze
       - name: Run tests
         run: pub run test
-  build_dart1:
-    # use ubuntu's latest OS
-    runs-on: ubuntu-latest
-    # use the google/dart container (this makes `dart` available to use)
-    # test against multiple versions of dart
-    container:
-      image: google/dart:1
-    # checkout the code, run pub get and finally run tests
+  test_old_sdks:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        sdk: [2.9.0, 2.8.1]
     steps:
       - uses: actions/checkout@v2
+      - uses: dart-lang/setup-dart@v1
+        with:
+          sdk: ${{ matrix.sdk }}
       - name: Install dependencies
         run: pub get
+      - name: Check formatting
+        run: dartfmt --dry-run --set-exit-if-changed .
+      - name: Analyze code
+        run: dartanalyzer --fatal-warnings .
       - name: Run tests
         run: pub run test
