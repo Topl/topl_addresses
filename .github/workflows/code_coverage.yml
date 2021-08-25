@@ -33,10 +33,6 @@ jobs:
         
       - name: Run tests
         run: flutter test --coverage
-        
-      - name: Get secret
-        env:
-          CODECOV_TOKEN: ${{secrets.CODECOV_TOKEN}}
       
       - name: Upload coverage to codecov
         run: curl -s https://codecov.io/bash -t $
