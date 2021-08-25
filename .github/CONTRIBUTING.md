@@ -1,6 +1,6 @@
 # Contributing to bip-topl
 
-You want to contribute to UIkit? Awesome. Please take a few moments to
+You want to contribute to bip-topl? Awesome. Please take a few moments to
 review the following guidelines to get you started. Cheers.
 
 * [Communication channels](#communication)
@@ -73,7 +73,7 @@ Each time you want to work on a fix or a new feature, create a new branch based 
 <a name="commit-message-convention"></a>
 ## Commit Message Convention
 
-UIkit adapts the [Vue's commit convention](https://github.com/vuejs/vue/blob/dev/.github/COMMIT_CONVENTION.md). Commit messages can have the following types:
+bip-topl adapts the [Vue's commit convention](https://github.com/vuejs/vue/blob/dev/.github/COMMIT_CONVENTION.md). Commit messages can have the following types:
 
 - `build:` Changes that affect the build system or external dependencies
 - `chore:` Changes to readme, etc
