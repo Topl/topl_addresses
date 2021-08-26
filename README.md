@@ -59,7 +59,7 @@ void main() {
   print(Base58Encoder.instance.encode(
       masterPublicKey.rawKey)); //AinUA7J1kBiyvDZ8nPL8BoCE9PBxPjKzUfoyhpXAGTXn
   //BIP-44 path: m / purpose' / coin_type' / account_ix' / change_chain / address_ix
-  //You can iterate through a BIP-44 path by deriving based on each index at a time. For this example, we will only use one idx.
+  //You can iterate through a CIP-1852 path by deriving based on each index at a time. For this example, we will only use one idx.
   final derivedPrv = derivator.ckdPriv(masterPrivateKey, address_ix);
   final derivedPub = derivator.ckdPub(masterPublicKey, address_ix);
   print(Base58Encoder.instance.encode(derivedPrv
