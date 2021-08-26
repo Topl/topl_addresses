@@ -21,7 +21,7 @@ It will power the live Ribn wallet currently in active development.
 * CIP-1852 HD Wallet Compatibility
    - Topl Specific BIP32 Deterministic Key Generator
 * BIP39 Compatible for Mnemonic Phrases
-* BIP39-ED25519 Extended Keys (used for signing transactions)
+* BIP32-ED25519 Extended Keys (used for signing transactions)
 * Key Generator tool utilizing PBKDF2 (for additional security around mnemonics)
 
 ### Features In Active Development
