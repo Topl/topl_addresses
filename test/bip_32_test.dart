@@ -4,7 +4,7 @@ import 'package:pinenacl/x25519.dart';
 import 'package:test/test.dart';
 
 //
-// BIP-44 path: m / purpose' / coin_type' / account_ix' / change_chain / address_ix
+// CIP-1852 path: m / purpose' / coin_type' / account_ix' / change_chain / address_ix
 //
 // Topl adoption: m / 1852' / 7091' / 0' / change_chain --> role / address_ix
 //
