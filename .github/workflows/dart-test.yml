@@ -21,19 +21,10 @@ jobs:
         sdk: [stable, beta, dev, 2.13.0]
     steps:
       - uses: actions/checkout@v2
-      - uses: dart-lang/setup-dart@v1.0
+      - name: dart-code-metrics
+        uses: dart-code-checker/dart-code-metrics-action@v1
         with:
-          sdk: ${{ matrix.sdk }}
-      - id: install
-        name: Install dependencies
-        run: pub get
-      - name: Verify formatting
-        run: dart format --output=none --set-exit-if-changed .
-        if: matrix.sdk == 'dev' && steps.install.outcome == 'success'
-
-      - name: Analyze project source
-        run: dart analyze --fatal-infos
-        if: always() && steps.install.outcome == 'success'
+          github_token: ${{ secrets.GITHUB_TOKEN }}
   # Run tests on a matrix consisting of two dimensions:
   # 1. OS: ubuntu-latest, macos-latest, windows-latest
   # 2. Release channel: dev, stable, and 2.13.0 (the package's lower bound)
