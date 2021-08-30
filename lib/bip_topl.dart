@@ -13,6 +13,7 @@ export 'src/crypto/random_bridge.dart';
 export 'src/crypto/formatting.dart';
 export 'src/utils/errors.dart';
 export 'src/utils/constants.dart';
+export 'src/utils/nullable.dart';
 export 'src/encoding/base_58_encoder.dart';
 
 // TODO: Export any libraries intended for clients of this package.
