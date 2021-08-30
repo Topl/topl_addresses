@@ -6,7 +6,6 @@ jobs:
     sanity_checks:
         name: Sanity checks
         runs-on: ubuntu-latest
-        if: "startsWith(github.ref, 'refs/tags/') && github.repository == 'Topl/bip-topl'"
 
         steps:
         - uses: actions/checkout@v2
