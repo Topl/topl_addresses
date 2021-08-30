@@ -6,12 +6,12 @@ A [Dart][dart] library that supports the [Topl][topl] blockchain.
       <img width="118px" alt="Topl logo" src="https://avatars.githubusercontent.com/u/26033322?s=200&v=4" />
     </td>
     <td valign="middle">
-      <a href="https://img.shields.io/badge/code-of%20conduct-green.svg"><img width="100%" alt="Code of Conduct" src="https://github.com/Topl/bip-topl/blob/main/.github/CODE_OF_CONDUCT.md"></a>
-      <a href="https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg"><img width="100%" alt="License" src="https://opensource.org/licenses/MPL-2.0"></a>
+      <a href="https://img.shields.io/badge/code-of%20conduct-green.svg"><img alt="Code of Conduct" src="https://github.com/Topl/bip-topl/blob/main/.github/CODE_OF_CONDUCT.md"></a>
+      <a href="https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg"><img  alt="License" src="https://opensource.org/licenses/MPL-2.0"></a>
     </td>
     <td valign="middle">
-      <a href=[dart-test]><img width="100%" alt="Github build status" src="https://github.com/Topl/bip-topl/actions/workflows/dart-test.yml/badge.svg"></a>
-      <a href=https://codecov.io/gh/Topl/bip-topl/branch/main/graph/badge.svg><img width="100%" alt="bip-topl code coverage" src="https://codecov.io/gh/Topl/bip-topl"></a>
+      <a href=[dart-test]><img alt="Github build status" src="https://github.com/Topl/bip-topl/actions/workflows/dart-test.yml/badge.svg"></a>
+      <a href=https://codecov.io/gh/Topl/bip-topl/branch/main/graph/badge.svg><img alt="bip-topl code coverage" src="https://codecov.io/gh/Topl/bip-topl"></a>
     </td>
     <td>
       <a href="https://twitter.com/topl_protocol"><img alt="@topl_protocol on Twitter" src="https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2Ftopl_protocol"></a>
