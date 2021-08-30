@@ -1,5 +1,5 @@
 
-name: Update Dart Documentation
+name: Pre-release sanity check
 on: 
   workflow_dispatch:
 jobs:
