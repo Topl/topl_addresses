@@ -17,7 +17,7 @@ jobs:
           - uses: flame-engine/flame-dartdoc-action@v1
           - name: Copy directory
             run: |
-                rm -rf docs/ | mv doc/ docs/
+                rm -rf ./docs/ | mv ./doc/ ./docs/
           - name: deploy
             uses: peaceiris/actions-gh-pages@v3
             with: 
