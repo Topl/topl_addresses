@@ -7,7 +7,7 @@ A [Dart][dart] library that supports the [Topl][topl] blockchain.
     </td>
     <td valign="middle">
       <a href="https://img.shields.io/badge/code-of%20conduct-green.svg"><img width="100%" alt="Code of Conduct" src="https://github.com/Topl/bip-topl/blob/main/.github/CODE_OF_CONDUCT.md"></a>
-      <a href="https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg"><img alt="License" src="https://opensource.org/licenses/MPL-2.0"></a>
+      <a href="https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg"><img width="100%" alt="License" src="https://opensource.org/licenses/MPL-2.0"></a>
     </td>
     <td valign="middle">
       <a href=[dart-test]><img width="100%" alt="Github build status" src="https://github.com/Topl/bip-topl/actions/workflows/dart-test.yml/badge.svg"></a>
