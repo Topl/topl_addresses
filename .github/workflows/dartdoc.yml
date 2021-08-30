@@ -11,13 +11,16 @@ jobs:
           - uses: actions/checkout@v2
           - uses: dart-lang/setup-dart@v1
           - run: dart pub get
-          - name: dartdoc bip-topl
-            run: dartdoc --quiet --no-generate-docs
-              --errors ambiguous-doc-reference,broken-link,deprecated
-              --errors unknown-directive,unknown-macro,unresolved-doc-reference
-          - name: Copy directory
-            uses: canastro/copy-file-action@master
+          - uses: subosito/flutter-action@v1
             with:
-                source: "doc"
-                target: "docs"
+                channel: 'stable'
+          - uses: flame-engine/flame-dartdoc-action@v1
+          - name: Copy directory
+            run: |
+                rm -rf docs/ | mv doc/ docs/
+          - name: deploy
+            uses: peaceiris/actions-gh-pages@v3
+            with: 
+              github_token: ${{ secrets.GITHUB_TOKEN }}
+              publish_dir: ./docs
 
