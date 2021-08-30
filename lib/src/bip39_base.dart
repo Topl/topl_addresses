@@ -51,6 +51,9 @@ String _deriveChecksumBits(Uint8List entropy) {
   return _bytesToBinary(Uint8List.fromList(hash.bytes)).substring(0, CS);
 }
 
+///
+/// This function generates a mnemonic with the given strength, language, and random number generator function (to generate random entropy).
+/// Developers should note that if you use Random.secure(), it might not be supported on all platforms (since under the hood it uses a native implementation which does not exist for some platforms i.e cross-compilation to Node).
 String generateMnemonic(Random random,
     {int strength = 128, String language = 'english'}) {
   assert(strength % 32 == 0);
