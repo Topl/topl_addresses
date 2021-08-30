@@ -12,12 +12,13 @@ jobs:
           - uses: dart-lang/setup-dart@v1
           - run: dart pub get
           - name: dartdoc bip-topl
-            run: dartdoc --quiet --no-generate-docs
-              --errors ambiguous-doc-reference,broken-link,deprecated
-              --errors unknown-directive,unknown-macro,unresolved-doc-reference
-          - name: Copy directory
-            uses: canastro/copy-file-action@master
-            with:
-                source: "doc"
-                target: "docs"
-
+            run: dartdoc --no-auto-include-dependencies --quiet
+          - name: deploy
+            uses: peaceiris/actions-gh-pages@v3
+            with: 
+              github_token: ${{ secrets.GITHUB_TOKEN }}
+              publish_dir: ./doc/api
+              cname: bip-topl.docs.topl.co
+              enable_jekyll: true
+              user_name: 'github-actions[bot]'
+              user_email: 'github-actions[bot]@users.noreply.github.com'
