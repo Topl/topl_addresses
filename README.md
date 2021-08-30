@@ -16,7 +16,7 @@ A [Dart][dart] library that supports the [Topl][topl] blockchain.
     <td>
       <a href="https://twitter.com/topl_protocol"><img alt="@topl_protocol on Twitter" src="https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Ftwitter.com%2Ftopl_protocol"></a>
       <br>
-      <a href=[stackexchange-url]><img alt="stackoverflow" src=[stackexchange-image]></a>
+      <a href=[stackexchange-url]><img alt="stackoverflow" src="https://img.shields.io/badge/bip--topl-stackexchange-brightgreen"></a>
       <br>
       <a href=[discord-url]><img alt="Discord" src="https://img.shields.io/discord/591914197219016707.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2"></a>
     </td>
