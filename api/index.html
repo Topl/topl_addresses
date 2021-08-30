@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="generator" content="made with love by dartdoc 0.42.0">
+  <meta name="description" content="bip_topl API docs, for the Dart programming language.">
+  <title>bip_topl - Dart API docs</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="static-assets/github.css">
+  <link rel="stylesheet" href="static-assets/styles.css">
+  <link rel="icon" href="static-assets/favicon.png">
+
+  
+</head>
+
+
+<body data-base-href=""
+      data-using-base-href="false">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <button id="sidenav-left-toggle" type="button">&nbsp;</button>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="https://github.com/Topl/bip-topl">bip_topl package</a></li>
+  </ol>
+  <div class="self-name">bip_topl</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<main>
+
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+  <li><a href="https://github.com/Topl/bip-topl">bip_topl package</a></li>
+</ol>
+
+
+    <h5 class="hidden-xs"><span class="package-name">bip_topl</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Libraries</li>
+      <li><a href="bip_topl/bip_topl-library.html">bip_topl</a></li>
+</ol>
+
+  </div>
+
+  <div id="dartdoc-main-content" class="main-content">
+      
+<section class="desc markdown">
+  <p><img src="https://github.com/Topl/bip-topl/actions/workflows/dart-test.yml/badge.svg" alt="dart-test">
+<a href="https://opensource.org/licenses/MPL-2.0"><img src="https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg" alt="License: MPL 2.0"></a>
+<a href="https://codecov.io/gh/Topl/bip-topl"><img src="https://codecov.io/gh/Topl/bip-topl/branch/main/graph/badge.svg" alt="codecov"></a>
+<a href="https://github.com/Topl/bip-topl/blob/main/.github/CODE_OF_CONDUCT.md"><img src="https://img.shields.io/badge/code-of%20conduct-green.svg" alt="Code of Conduct"></a>
+<a href="https://discord.gg/CHaG8utU"><img src="https://img.shields.io/discord/591914197219016707.svg?label=&amp;logo=discord&amp;logoColor=ffffff&amp;color=7389D8&amp;labelColor=6A7EC2" alt="Discord"></a>
+<a href="https://bitcoin.stackexchange.com/questions/tagged/bip-topl"><img src="https://img.shields.io/badge/bip--topl-stackexchange-brightgreen" alt="StackExchange"></a></p>
+<h1 id="topl-bip-library">Topl Bip Library</h1>
+<p>Library for building Topl blockchain wallet mobile apps in Flutter. Please read the <a href="https://topl.github.io/bip-topl/">documentation</a> for more information.</p>
+<h2 id="about">About</h2>
+<p>This project is a Topl blockchain on-ramp for Flutter/Dart mobile app developers.  Currently a work in progress.</p>
+<p>It will power the live Ribn wallet currently in active development.</p>
+<h3 id="current-features">Current Features</h3>
+<ul>
+<li>CIP-1852 HD Wallet Compatibility
+<ul>
+<li>Topl Specific BIP32 Deterministic Key Generator</li>
+</ul>
+</li>
+<li>BIP39 Compatible for Mnemonic Phrases</li>
+<li>BIP32-ED25519 Extended Keys (used for signing transactions)</li>
+<li>Key Generator tool utilizing PBKDF2 (for additional security around mnemonics)</li>
+</ul>
+<h3 id="features-in-active-development">Features In Active Development</h3>
+<ul>
+<li>create, broadcast and track transactions and fees</li>
+<li>sign and validate messages</li>
+<li>manage private and public keys</li>
+<li>list, create, update or remove wallets</li>
+</ul>
+<h3 id="planned-features">Planned Features</h3>
+<ul>
+<li>utilities for staking accounts</li>
+<li>custom asset transactions</li>
+<li>smart contracts</li>
+</ul>
+<h3 id="bip32-usage">BIP32 Usage</h3>
+<pre class="language-dart"><code class="language-dart">import 'package:bip_topl/bip_topl.dart';
+import 'package:pinenacl/x25519.dart';
+
+void main() {
+  const coder = HexCoder.instance;
+  const derivator = Bip32Ed25519KeyDerivation.instance;
+  const keyPair = {
+    'xprv':
+        'c0b712f4c0e2df68d0054112efb081a7fdf8a3ca920994bf555c40e4c249354993f774ae91005da8c69b2c4c59fa80d741ecea6722262a6b4576d259cf60ef30c05763f0b510942627d0c8b414358841a19748ec43e1135d2f0c4d81583188e1',
+    'xpub':
+        '906d68169c8bbfc3f0cd901461c4c824e9ab7cdbaf38b7b6bd66e54da0411109c05763f0b510942627d0c8b414358841a19748ec43e1135d2f0c4d81583188e1'
+  };
+  const address_ix = 0;
+  // generate master public and private key from encoded keyPair
+  final masterPrivateKey =
+      Bip32SigningKey.decode(keyPair['xprv']!, coder: coder);
+  final masterPublicKey = Bip32VerifyKey.decode(keyPair['xpub']!, coder: coder);
+  print(Base58Encoder.instance.encode(masterPrivateKey
+      .rawKey)); //4rUU8Ee5K6h663ByMBLRjXgs9GYsFsTiUFujbfSvDpKjFuEfErc9QFfs4F1fej5jJ6gwavr2zU66c6ASagaqyZcb
+  print(Base58Encoder.instance.encode(
+      masterPublicKey.rawKey)); //AinUA7J1kBiyvDZ8nPL8BoCE9PBxPjKzUfoyhpXAGTXn
+  //BIP-44 path: m / purpose' / coin_type' / account_ix' / change_chain / address_ix
+  //You can iterate through a CIP-1852 path by deriving based on each index at a time. For this example, we will only use one idx.
+  final derivedPrv = derivator.ckdPriv(masterPrivateKey, address_ix);
+  final derivedPub = derivator.ckdPub(masterPublicKey, address_ix);
+  print(Base58Encoder.instance.encode(derivedPrv
+      .rawKey)); //2JAppvWBAgmd7B6s1XDcNPrxtSfT5MCcnhuVxeNKLYHyyqa3U9FE6BD85QPVtn6iWAisSq2WKyvbZFzmEA1rYbMP
+  print(Base58Encoder.instance.encode(
+      derivedPub.rawKey)); //AGj1p3atP5m2UVxXrBBtmniWQyV4HZGkVesii922zwj6
+}
+</code></pre>
+<h3 id="bip39-usage">BIP39 Usage</h3>
+<pre class="language-dart"><code class="language-dart">// BIP39 Mnemonics
+
+// Can be used to generate the root key of a given HDTree, an address, or simply convert bits to mnemonic for human friendly value
+
+// For more details about the protocol, see
+// [Bitcoin Improvement Proposal 39](https://github.com/bitcoin/bips/blob/master/bip-0039.mediawiki)
+
+import 'dart:math';
+
+import 'package:bip_topl/bip_topl.dart';
+
+void main() {
+  const mnemonic =
+      'legal winner thank year wave sausage worth useful legal winner thank yellow';
+
+  // mnemonic to entropy
+  final entropy = mnemonicToEntropy(mnemonic, 'english');
+  print(entropy); // 7f7f7f7f7f7f7f7f7f7f7f7f7f7f7f7f
+
+  // mnemonic to seedHex
+  // accepts an optional passphrase to strengthen the security of the mnemonic
+  final seedHex = mnemonicToSeedHex(mnemonic, passphrase: 'TREZOR');
+  print(
+      seedHex); //2e8905819b8723fe2c1d161860e5ee1830318dbf49a83bd451cfb8440c28bd6fa457fe1296106559a3c80937a1c1069be3a3a5bd381ee6260e8d9739fce1f607
+
+  //entropy to mnemonic
+  final code = entropyToMnemonic(entropy);
+  print(
+      code); //legal winner thank year wave sausage worth useful legal winner thank yellow
+
+  // validate Mnemonic
+  final validation = validateMnemonic(code, 'english');
+  print(validation); // true
+
+  // generateMnemonic with 15 words
+  final words = generateMnemonic(Random.secure(), strength: 160);
+  print(words); // should be random 15 word mnemonic
+}
+</code></pre>
+<h3 id="contributing">Contributing</h3>
+<p>Please follow the <a href="./github/CONTRIBUTING.md">Contribution Guidelines</a></p>
+<h3 id="community">Community</h3>
+<ul>
+<li><a href="https://discord.gg/CHaG8utU">Discord</a></li>
+<li><a href="https://bitcoin.stackexchange.com/questions/tagged/bip-topl">StackExchange</a></li>
+</ul>
+<h3 id="similar-libraries-in-other-languages">Similar libraries in other languages</h3>
+<ul>
+<li>Javascript: <a href="https://github.com/Topl/BramblJS">BramblJS</a></li>
+<li>Python: <a href="https://github.com/Topl/BramblPy">BramblPy</a></li>
+<li>Scala: <a href="https://github.com/Topl/Bifrost/tree/main/brambl/src">BramblSc</a></li>
+</ul>
+<h3 id="references">References</h3>
+<p><a href="https://github.com/satoshilabs/slips/blob/master/slip-0023.md">SLIP-0023</a>
+<a href="https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki">BIP-0032</a>
+<a href="https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki">BIP-0044</a>
+<a href="https://cips.cardano.org/cips/cip1852/">CIP-1852</a></p>
+</section>
+
+
+      <section class="summary">
+          <h2>Libraries</h2>
+        <dl>
+          <dt id="bip_topl">
+  <span class="name"><a href="bip_topl/bip_topl-library.html">bip_topl</a></span> 
+
+</dt>
+<dd>Support for doing something awesome. <a href="bip_topl/bip_topl-library.html">[...]</a>
+</dd>
+
+        </dl>
+      </section>
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div>
+
+</main>
+
+<footer>
+  <span class="no-break">
+    bip_topl
+      0.0.1
+  </span>
+
+  
+</footer>
+
+
+<script src="static-assets/highlight.pack.js"></script>
+<script src="static-assets/script.js"></script>
+
+
+
+</body>
+
+</html>
+
