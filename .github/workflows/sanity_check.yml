@@ -13,5 +13,5 @@ jobs:
         - uses: dart-lang/setup-dart@v1
         - run: dart pub get
         - name: Run checks
-        - run: dart pub run grinder sanity-check-before-release
+          run: dart pub run grinder sanity-check-before-release
 
