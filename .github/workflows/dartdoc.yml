@@ -1,0 +1,23 @@
+
+name: Update Dart Documentation
+on: 
+  workflow_dispatch:
+jobs:
+    dartdoc:
+        name: Dartdoc
+        runs-on: ubuntu-latest
+    
+        steps:
+          - uses: actions/checkout@v2
+          - uses: dart-lang/setup-dart@v1
+          - run: dart pub get
+          - name: dartdoc bip-topl
+            run: dartdoc --quiet --no-generate-docs
+              --errors ambiguous-doc-reference,broken-link,deprecated
+              --errors unknown-directive,unknown-macro,unresolved-doc-reference
+          - name: Copy directory
+            uses: canastro/copy-file-action@master
+            with:
+                source: "doc"
+                target: "docs"
+
