@@ -10,6 +10,18 @@ void main(List<String> args) {
   pkg.botEmail.value = 'topl.bot.beep.boop@gmail.com';
   pkg.githubUser.fn = () => Platform.environment['GH_USER']!;
   pkg.githubPassword.fn = () => Platform.environment['GH_TOKEN']!;
+  pkg.standaloneName.value = 'bip-topl';
+  pkg.githubReleaseNotes.fn = () =>
+      'To install bip-topl ${pkg.version}, download one of the packages below '
+      'and [add it to your PATH][], or see [the Developer Hub website][] for full '
+      'installation instructions.\n'
+      '\n'
+      '[add it to your PATH]: https://katiek2.github.io/path-doc/\n'
+      '[the Sass website]: https://topl.readme.io/docs/install\n'
+      '\n'
+      '# Changes\n'
+      '\n'
+      '${pkg.githubReleaseNotes.defaultValue}';
   pkg.addAllTasks();
   grind(args);
 }
