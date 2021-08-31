@@ -1,0 +1,9 @@
+{
+    "//": [
+      "This isn't the official package.json for Bip for Topl. It's just used to ",
+      "install dependencies used for testing the Node API. It defines a package",
+      "name to enable GitHub's dependency graph tracking."
+    ],
+    "name": "bip-topl"
+  }
+  

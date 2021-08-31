@@ -1,0 +1,21 @@
+{
+    "name": "bip-topl",
+    "description": "A pure JavaScript implementation of bip-topl.",
+    "license": "MPL-2",
+    "bugs": "https://github.com/Topl/bip-topl/issues",
+    "homepage": "https://github.com/Topl/bip-topl",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/Topl/bip-topl"
+    },
+    "author": {
+      "name": "Sterling Wells",
+      "email": "s.wells@topl.me",
+      "url": "https://github.com/sterlingwellscaffeine"
+    },
+    "engines": {
+      "node": ">=8.9.0"
+    },
+    "keywords": ["bip32", "bip39", "SLIP-0023", "cip1852", "topl"]
+  }
+  
