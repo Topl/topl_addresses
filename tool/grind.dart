@@ -17,7 +17,7 @@ void main(List<String> args) {
       'installation instructions.\n'
       '\n'
       '[add it to your PATH]: https://katiek2.github.io/path-doc/\n'
-      '[the Sass website]: https://topl.readme.io/docs/install\n'
+      '[the Topl website]: https://topl.readme.io/docs/install\n'
       '\n'
       '# Changes\n'
       '\n'
