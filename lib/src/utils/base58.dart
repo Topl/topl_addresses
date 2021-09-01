@@ -1,11 +1,11 @@
 import 'dart:typed_data';
 
-/// Decode/Encopde Bytes to Base58 String
+/// Decode/Encode Bytes to Base58 String
 class Base58 {
   static const String ALPHABET =
       '123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz';
 
-  // Encodes a byte-array to a base58 string
+  /// Encodes a byte-array to a base58 string
   static String encode(List<int> bytes) {
     if (bytes.isEmpty) {
       return '';
