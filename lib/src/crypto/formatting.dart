@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:typed_data';
 
-import 'package:fast_base58/fast_base58.dart';
+import 'package:bip_topl/src/encoding/base_58_encoder.dart';
 import 'package:pointycastle/src/utils.dart' as p_utils;
 
 /// This method converts bytes to an unsigned integer so that it can be used more easily by our pointycastle dependency
@@ -14,6 +14,6 @@ Uint8List str2ByteArray(String str, {String enc = ''}) {
   if (enc == 'latin1') {
     return latin1.encode(str);
   } else {
-    return Uint8List.fromList(Base58Decode(str));
+    return Uint8List.fromList(Base58Encoder.instance.decode(str));
   }
 }

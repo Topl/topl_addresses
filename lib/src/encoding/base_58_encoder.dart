@@ -1,5 +1,4 @@
-import 'package:bip_topl/src/crypto/formatting.dart';
-import 'package:fast_base58/fast_base58.dart';
+import 'package:bip_topl/src/utils/base58.dart';
 import 'package:pinenacl/x25519.dart';
 
 class Base58Encoder implements Encoder {
@@ -8,13 +7,13 @@ class Base58Encoder implements Encoder {
 
   @override
   String encode(List<int> data) {
-    final result = Base58Encode(Uint8List.fromList(data));
+    final result = Base58.encode(data);
     return result;
   }
 
   @override
   Uint8List decode(String data) {
-    final result = str2ByteArray(data);
-    return result;
+    final result = Base58.decode(data);
+    return Uint8List.fromList(result);
   }
 }
