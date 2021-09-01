@@ -6,7 +6,6 @@ import 'package:pinenacl/key_derivation.dart';
 import 'package:test/test.dart';
 
 void main() {
-  final entropyPlusCs24Words = 256;
   final testMnemonic1 =
       'rude stadium move tumble spice vocal undo butter cargo win valid session question walk indoor nothing wagon column artefact monster fold gallery receive just';
   final testEntropy1 =
