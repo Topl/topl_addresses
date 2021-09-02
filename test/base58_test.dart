@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:bip_topl/src/utils/base58.dart';
 import 'package:pinenacl/encoding.dart';
 import 'package:test/test.dart';
@@ -38,6 +40,20 @@ void main() {
   test('Decode Base58', () {
     testData.forEach((v) {
       expect(HexCoder.instance.encode(Base58.decode(v[1])), v[0]);
+    });
+  });
+
+  test('Test other languages', () {
+    var vec = {
+      'bitcoin': '4jJc4sAwPs',
+      'helloworld': '6sBRWyteSSzHrs',
+      '比特幣': '3wJp7rKdW1tEv',
+      '你好世界': '5KMpie3K6ztGQYmij',
+      'salam dünýä': 'jREXyzsGzQ48Jrqb4Gb'
+    };
+    vec.forEach((String k, v) {
+      expect(Base58.encode(utf8.encode(k)), v);
+      expect(utf8.decode(Base58.decode(v)), k);
     });
   });
 }
