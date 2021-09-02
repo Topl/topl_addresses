@@ -9,9 +9,7 @@
       "url": "https://github.com/Topl/bip-topl"
     },
     "author": {
-      "name": "Sterling Wells",
-      "email": "s.wells@topl.me",
-      "url": "https://github.com/sterlingwellscaffeine"
+      "name": "Topl"
     },
     "engines": {
       "node": ">=8.9.0"
