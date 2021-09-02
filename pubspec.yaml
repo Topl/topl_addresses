@@ -18,7 +18,6 @@ dependencies:
   cli_pkg: ^1.5.1
   collection: ^1.15.0
   crypto: ^3.0.1
-  fast_base58: ^0.2.0
   pinenacl: ^0.3.3
   pointycastle: ^3.3.1
   source_span: ^1.8.1
