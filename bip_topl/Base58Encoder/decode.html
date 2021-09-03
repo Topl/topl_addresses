@@ -115,8 +115,8 @@
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
 Uint8List decode(String data) {
-  final result = str2ByteArray(data);
-  return result;
+  final result = Base58.decode(data);
+  return Uint8List.fromList(result);
 }</code></pre>
 </section>
 

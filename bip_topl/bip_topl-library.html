@@ -79,6 +79,14 @@
       <h2>Classes</h2>
 
       <dl>
+        <dt id="Base58">
+  <span class="name "><a href="../bip_topl/Base58-class.html">Base58</a></span> 
+
+</dt>
+<dd>
+  Decode/Encode Bytes to Base58 String 
+</dd>
+
         <dt id="Base58Encoder">
   <span class="name "><a href="../bip_topl/Base58Encoder-class.html">Base58Encoder</a></span> 
 
@@ -303,6 +311,21 @@ pointycastle.
   </div>
 </dd>
 
+        <dt id="EXTENDED_SECRET_KEY_SIZE" class="constant">
+  <span class="name "><a href="../bip_topl/EXTENDED_SECRET_KEY_SIZE-constant.html">EXTENDED_SECRET_KEY_SIZE</a></span>
+  <span class="signature">&#8594; const <a href="https://api.dart.dev/stable/2.13.4/dart-core/int-class.html">int</a></span>
+  
+
+</dt>
+<dd>
+   
+  
+
+  <div>
+    <span class="signature"><code>64</code></span>
+  </div>
+</dd>
+
         <dt id="MAX_MNEMONIC_VALUE" class="constant">
   <span class="name "><a href="../bip_topl/MAX_MNEMONIC_VALUE-constant.html">MAX_MNEMONIC_VALUE</a></span>
   <span class="signature">&#8594; const <a href="https://api.dart.dev/stable/2.13.4/dart-core/int-class.html">int</a></span>
@@ -315,6 +338,21 @@ pointycastle.
 
   <div>
     <span class="signature"><code>2047</code></span>
+  </div>
+</dd>
+
+        <dt id="PUBLIC_KEY_SIZE" class="constant">
+  <span class="name "><a href="../bip_topl/PUBLIC_KEY_SIZE-constant.html">PUBLIC_KEY_SIZE</a></span>
+  <span class="signature">&#8594; const <a href="https://api.dart.dev/stable/2.13.4/dart-core/int-class.html">int</a></span>
+  
+
+</dt>
+<dd>
+   
+  
+
+  <div>
+    <span class="signature"><code>32</code></span>
   </div>
 </dd>
 
@@ -446,7 +484,8 @@ pointycastle.
 
 </dt>
 <dd>
-   
+  This function generates a mnemonic with the given strength, language, and random number generator function (to generate random entropy).
+Developers should note that if you use Random.secure(), it might not be supported on all platforms (since under the hood it uses a native implementation which does not exist for some platforms i.e cross-compilation to Node). 
   
 
 </dd>
@@ -460,6 +499,19 @@ pointycastle.
 </dt>
 <dd>
    
+  
+
+</dd>
+
+        <dt id="listEquals" class="callable">
+  <span class="name"><a href="../bip_topl/listEquals.html">listEquals</a></span><span class="signature">(<wbr><span class="parameter" id="listEquals-param-list1"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.13.4/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/2.13.4/dart-core/Object-class.html">Object</a>?</span>&gt;</span>?</span> <span class="parameter-name">list1</span>, </span><span class="parameter" id="listEquals-param-list2"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.13.4/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.dart.dev/stable/2.13.4/dart-core/Object-class.html">Object</a>?</span>&gt;</span>?</span> <span class="parameter-name">list2</span></span>)
+    <span class="returntype parameter">&#8594; <a href="https://api.dart.dev/stable/2.13.4/dart-core/bool-class.html">bool</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Returns whether <code>list1</code> and <code>list2</code> have the same contents. 
   
 
 </dd>
@@ -698,6 +750,7 @@ described as part of the <code>`Type`</code>
     <h5>bip_topl library</h5>
     <ol>
   <li class="section-title"><a href="../bip_topl/bip_topl-library.html#classes">Classes</a></li>
+  <li><a href="../bip_topl/Base58-class.html">Base58</a></li>
   <li><a href="../bip_topl/Base58Encoder-class.html">Base58Encoder</a></li>
   <li><a href="../bip_topl/Bip32ChildKeyDerivaton-class.html">Bip32ChildKeyDerivaton</a></li>
   <li><a href="../bip_topl/Bip32Ed25519-class.html">Bip32Ed25519</a></li>
@@ -725,7 +778,9 @@ described as part of the <code>`Type`</code>
   <li><a href="../bip_topl/BIP44_PATH_LENGTH-constant.html">BIP44_PATH_LENGTH</a></li>
   <li><a href="../bip_topl/BIP44_PURPOSE-constant.html">BIP44_PURPOSE</a></li>
   <li><a href="../bip_topl/BIP44_SOFT_UPPER_BOUND-constant.html">BIP44_SOFT_UPPER_BOUND</a></li>
+  <li><a href="../bip_topl/EXTENDED_SECRET_KEY_SIZE-constant.html">EXTENDED_SECRET_KEY_SIZE</a></li>
   <li><a href="../bip_topl/MAX_MNEMONIC_VALUE-constant.html">MAX_MNEMONIC_VALUE</a></li>
+  <li><a href="../bip_topl/PUBLIC_KEY_SIZE-constant.html">PUBLIC_KEY_SIZE</a></li>
   <li><a href="../bip_topl/SALT_PREFIX-constant.html">SALT_PREFIX</a></li>
   <li><a href="../bip_topl/SEED_SIZE-constant.html">SEED_SIZE</a></li>
   <li><a href="../bip_topl/XPRV_SIZE-constant.html">XPRV_SIZE</a></li>
@@ -739,6 +794,7 @@ described as part of the <code>`Type`</code>
   <li><a href="../bip_topl/from_word_count.html">from_word_count</a></li>
   <li><a href="../bip_topl/generateMnemonic.html">generateMnemonic</a></li>
   <li><a href="../bip_topl/generateSeed.html">generateSeed</a></li>
+  <li><a href="../bip_topl/listEquals.html">listEquals</a></li>
   <li><a href="../bip_topl/mnemonicToEntropy.html">mnemonicToEntropy</a></li>
   <li><a href="../bip_topl/mnemonicToSeed.html">mnemonicToSeed</a></li>
   <li><a href="../bip_topl/mnemonicToSeedHex.html">mnemonicToSeedHex</a></li>
