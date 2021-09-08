@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:bip_topl/utils.dart';
+import 'package:bip_topl/src/utils/utils.dart';
 import 'package:grinder/grinder.dart';
 import 'package:cli_pkg/cli_pkg.dart' as pkg;
 
