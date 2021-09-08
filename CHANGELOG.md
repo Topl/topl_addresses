@@ -1,3 +1,14 @@
+## 0.0.2
+
+* Upgrading Base58 Library
+
+After inspection and testing especially the cross-compilation capabilities of the bip-topl library, we decided to add our own implementation of base58 encoding. This is because the library that we were using did not correctly compile into JS. 
+
+Changelog: 
+* 1.) Added a new Base58 implementation
+* 2.) Optimized the scrypt default parameters for browser use cases
+* 3.) Added additional testing for the end to end flow
+
 ## 0.0.1
 
 * Initial Release
