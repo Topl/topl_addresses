@@ -12,9 +12,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="../static-assets/github.css">
-  <link rel="stylesheet" href="../static-assets/styles.css">
-  <link rel="icon" href="../static-assets/favicon.png">
+  
+  <link rel="stylesheet" href="../static-assets/github.css?v1">
+  <link rel="stylesheet" href="../static-assets/styles.css?v1">
+  <link rel="icon" href="../static-assets/favicon.png?v1">
 
   
 </head>
@@ -40,6 +41,38 @@
 
 <main>
 
+
+  <div id="dartdoc-main-content" class="main-content">
+      <div>
+<h1><span class="kind-function">bytesToUnsignedInt</span> function 
+    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
+ 
+</h1></div>
+
+    <section class="multi-line-signature">
+        
+
+<span class="returntype"><a href="https://api.dart.dev/stable/2.14.1/dart-core/BigInt-class.html">BigInt</a></span>
+<span class="name ">bytesToUnsignedInt</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="bytesToUnsignedInt-param-bytes"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.14.1/dart-typed_data/Uint8List-class.html">Uint8List</a></span> <span class="parameter-name">bytes</span></span></li>
+</ol>)
+
+    </section>
+    
+<section class="desc markdown">
+  <p>This method converts bytes to an unsigned integer so that it can be used more easily by our pointycastle dependency</p>
+</section>
+
+
+    
+<section class="summary source-code" id="source">
+  <h2><span>Implementation</span></h2>
+  <pre class="language-dart"><code class="language-dart">BigInt bytesToUnsignedInt(Uint8List bytes) {
+  return p_utils.decodeBigIntWithSign(1, bytes);
+}</code></pre>
+</section>
+
+
+  </div> <!-- /.main-content -->
 
   <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
     <header id="header-search-sidebar" class="hidden-l">
@@ -133,38 +166,6 @@
 
   </div><!--/.sidebar-offcanvas-left-->
 
-  <div id="dartdoc-main-content" class="main-content">
-      <div>
-<h1><span class="kind-function">bytesToUnsignedInt</span> function 
-    <a href="https://dart.dev/null-safety" class="feature feature-null-safety" title="Supports the null safety language feature.">Null safety</a>
- 
-</h1></div>
-
-    <section class="multi-line-signature">
-        
-
-<span class="returntype"><a href="https://api.dart.dev/stable/2.13.4/dart-core/BigInt-class.html">BigInt</a></span>
-<span class="name ">bytesToUnsignedInt</span>(<wbr><ol class="parameter-list"><li><span class="parameter" id="bytesToUnsignedInt-param-bytes"><span class="type-annotation"><a href="https://api.dart.dev/stable/2.13.4/dart-typed_data/Uint8List-class.html">Uint8List</a></span> <span class="parameter-name">bytes</span></span></li>
-</ol>)
-
-    </section>
-    
-<section class="desc markdown">
-  <p>This method converts bytes to an unsigned integer so that it can be used more easily by our pointycastle dependency</p>
-</section>
-
-
-    
-<section class="summary source-code" id="source">
-  <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">BigInt bytesToUnsignedInt(Uint8List bytes) {
-  return p_utils.decodeBigIntWithSign(1, bytes);
-}</code></pre>
-</section>
-
-
-  </div> <!-- /.main-content -->
-
   <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
   </div><!--/.sidebar-offcanvas-->
 
@@ -180,8 +181,9 @@
 </footer>
 
 
-<script src="../static-assets/highlight.pack.js"></script>
-<script src="../static-assets/script.js"></script>
+
+<script src="../static-assets/highlight.pack.js?v1"></script>
+<script src="../static-assets/script.js?v1"></script>
 
 
 
