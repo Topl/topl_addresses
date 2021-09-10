@@ -52,8 +52,9 @@ class Cip1852KeyTree extends Bip32KeyTree {
   set role(int newRole) => change;
 
   @override
-  Bip32Key master(Uint8List seed) {
-    final rawMaster = PBKDF2.hmac_sha512(Uint8List(0), seed, 4096, XPRV_SIZE);
+  Bip32Key master(Uint8List entropy) {
+    final rawMaster =
+        PBKDF2.hmac_sha512(Uint8List(0), entropy, 4096, XPRV_SIZE);
     return Bip32SigningKey.normalizeBytes(rawMaster);
   }
 }
