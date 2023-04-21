@@ -151,3 +151,5 @@ Please follow the [Contribution Guidelines](./github/CONTRIBUTING.md)
 [BIP-0032](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki)
 [BIP-0044](https://github.com/bitcoin/bips/blob/master/bip-0044.mediawiki)
 [CIP-1852](https://cips.cardano.org/cips/cip1852/)
+
+pub verification
